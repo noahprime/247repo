@@ -37,7 +37,7 @@ void DataTypeSizes(void)
   //Escape Characters used to signify the end of   characters meant for the printf function.
   //Operators here to format print. Evaluated at run-time.
   //Prints to stdout which in this case is the terminal.
-  printf("\"%s\" is a standard C datatype. Size of a \"%s\" data type is =  %Id\r\n",CHAR_DATA_TYPE,CHAR_DATA_TYPE,sizeof(char));
+  printf("\"%s\" is a standard C datatype. Size of a \"%s\" data type is =  %d\r\n",CHAR_DATA_TYPE,CHAR_DATA_TYPE,sizeof(char));
 }
 
 char* GetStringFromStdin(char* str)
@@ -51,5 +51,3 @@ void DisplayString(const char* str)
   printf("Here is your String: ");
   fputs(str, stdout);
 }
-
-
