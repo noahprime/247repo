@@ -45,41 +45,7 @@ char* itoa(int num, char* str, int base) {
     str[0] = '0';
     return str;
   }
-  else if(base <= 10){
 
-    int i = 0;
-    int j = 0;
-
-    if(num < 0){
-      str[i] = '-';
-      i++;
-      num = num*-1;
-      j++;
-    }
-
-    while(num != 0){
-      int rem = num%base;
-			char c = rem + '0';
-      num = num/base;
-      str[i] = c;
-      i++;
-    }
-
-      i--;
-
-    while(i > j){
-      char dummy = str[i];
-      str[i] = str[j];
-      str[j] = dummy;
-      i--;
-      j++;
-    }
-
-    return str;
-  }
-  //////////////////////////////////////////////////////////////
-  //BASE GREATER THAN 10
-  ///////////////////////////////////////////////////////////////
   else{
     int i = 0;
     int j = 0;
