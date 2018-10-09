@@ -42,8 +42,7 @@ int main(int argc, char *argv[]) {
 
 char* itoa(int num, char* str, int base) {
   if(num == 0){
-    *str = (char)0;
-    printf("\nString 0: %s\n",str);
+    str[0] = '0';
     return str;
   }
   else if(base <= 10){
@@ -59,9 +58,10 @@ char* itoa(int num, char* str, int base) {
     }
 
     while(num != 0){
-      int rem = num%base + '0';
+      int rem = num%base;
+			char c = rem + '0';
       num = num/base;
-      str[i] = (char)rem;
+      str[i] = c;
       i++;
     }
 
@@ -93,14 +93,15 @@ char* itoa(int num, char* str, int base) {
 
     while(num != 0){
       int rem = num%base;
+			char c;
       if(rem > 9){
-        rem = rem - 10 + 'a';
+        c = (rem - 10) + 'a';
       }
       else{
-        rem = rem + '0';
+        c = rem + '0';
       }
       num = num/base;
-      str[i] = (char)rem;
+      str[i] = c;
       i++;
     }
 
