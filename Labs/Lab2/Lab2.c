@@ -43,6 +43,7 @@ int main(int argc, char *argv[]) {
 char* itoa(int num, char* str, int base) {
   if(num == 0){
     str[0] = '0';
+		str[1] = 0;
     return str;
   }
 
@@ -70,7 +71,7 @@ char* itoa(int num, char* str, int base) {
       str[i] = c;
       i++;
     }
-
+			str[i] = 0;
       i--;
 
     while(i > j){
